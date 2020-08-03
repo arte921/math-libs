@@ -22,9 +22,9 @@ class Complex {
     );
 
     times = (other) => new Complex(
-            this.r * other.r - this.i * other.i,
-            this.r * other.i + other.r * this.i
-        );
+        this.r * other.r - this.i * other.i,
+        this.r * other.i + other.r * this.i
+    );
 
     div(other) {
         let a = this.r;

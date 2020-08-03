@@ -4,13 +4,7 @@ class Vector {
         this.y = y;
     }
 
-    length = () => Math.sqrt(this.x ** 2 + this.y ** 2);
-
     dotProduct = (other) => this.length * other.length * Math.cos(this.toAngle() - other.toAngle());
-
-    multiply = (other) => new Vector(this.x * other.x, this.y * other.y);
-
-    multiplyNumber = (factor) => new Vector(this.x * factor, this.y * factor);
 
     normalized = () => this.multiplyNumber(1 / this.length());
 
@@ -19,6 +13,21 @@ class Vector {
     toAngle = () => Math.tan(this.y / this.x);
 
     plusLength = (extra) =>  this.withLength(this.length() + extra);
+    
+    length = () => Math.sqrt(
+        this.x ** 2 +
+        this.y ** 2
+    );
+
+    multiply = (other) => new Vector(
+        this.x * other.x,
+        this.y * other.y
+    );
+
+    multiplyNumber = (factor) => new Vector(
+        this.x * factor,
+        this.y * factor
+    );
 
     rounded = () => new Vector(
         Math.round(this.x),
